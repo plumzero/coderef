@@ -1,6 +1,15 @@
 
 cmake_minimum_required(VERSION 2.8)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -W -Wall -g -O2 -std=c++11")
-
 add_subdirectory(编解码)
+add_subdirectory(Tai)
+add_subdirectory(C函数)
+add_subdirectory(日志)
+add_subdirectory(命令行)
+add_subdirectory(工具)
+add_subdirectory(时间)
+add_subdirectory(转换)
+add_subdirectory(字符串处理)
+add_subdirectory(产生临时文件)
+add_subdirectory(测试)
+add_subdirectory(注意)
