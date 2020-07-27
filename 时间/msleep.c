@@ -2,6 +2,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include <time.h>
 #include <sys/time.h>
 
@@ -29,6 +30,20 @@ double tv_diff_secs(struct timeval newer, struct timeval older)
                 (double)(newer.tv_usec - older.tv_usec) / 1000000.0;
     else
         return (double)(newer.tv_usec - older.tv_usec) / 1000000.0;
+}
+
+/** 休眠函数实现二 */
+void isleep(unsigned long millisecond)
+{
+    #ifdef __unix   /* usleep( time * 1000 ); */
+    struct timespec ts;
+    ts.tv_sec = (time_t)(millisecond / 1000);
+    ts.tv_nsec = (long)((millisecond % 1000) * 1000000);
+    /*nanosleep(&ts, NULL);*/
+    usleep((millisecond << 10) - (millisecond << 4) - (millisecond << 3));
+    #elif defined(_WIN32)
+    Sleep(millisecond);
+    #endif
 }
 
 int main()
