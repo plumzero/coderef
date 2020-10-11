@@ -14,5 +14,6 @@ add_subdirectory(产生临时文件)
 add_subdirectory(测试)
 add_subdirectory(注意)
 add_subdirectory(curl)
-add_subdirectory(正交码)
+add_subdirectory(正交编码)
+add_subdirectory(文件操作)
 
