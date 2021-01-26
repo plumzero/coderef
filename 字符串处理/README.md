@@ -16,3 +16,7 @@
 - wipeoff_colon.cpp
     
     去冒号
+    
+- strnocasecmp.cpp
+
+    不区分大小写比较
