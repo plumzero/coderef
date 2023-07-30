@@ -13,7 +13,7 @@ std::string tai_to_clock(uint64_t tai)
     epoch = tai + 1072915200;
     
     st = localtime(&epoch);
-    strftime(tmbuf, sizeof(tmbuf), "%Y-%m-%d %H:%M:%S", st);    
+    (tmbuf, sizeof(tmbuf), "%Y-%m-%d %H:%M:%S", st);    
     
     return std::string(tmbuf, strlen(tmbuf));
 }

@@ -8,6 +8,8 @@
 
 std::vector<std::string> split(const std::string& str, char sep)
 {
+    if (str.empty()) return {};
+
     std::vector<std::string> res;
     auto start = str.begin();
     auto end = str.end();
@@ -27,6 +29,8 @@ std::vector<std::string> split(const std::string& str, char sep)
 
 std::vector<std::string> split_filter_empty(const std::string& str, char sep)
 {
+    if (str.empty()) return {};
+
     std::vector<std::string> res;
     auto start = str.begin();
     auto end = str.end();
